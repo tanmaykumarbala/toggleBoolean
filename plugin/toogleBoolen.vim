@@ -17,8 +17,12 @@ function! ToogleTrue()
 			execute 'normal! diwi'."\<c-r>='!='\<cr>"
 	elseif g:cw ==? "!="
 			execute 'normal! diwi'."\<c-r>='=='\<cr>"
+	elseif g:cw ==? "&&"
+			execute 'normal! diwi'."\<c-r>='||'\<cr>"
+	elseif g:cw ==? "||"
+			execute 'normal! diwi'."\<c-r>='&&'\<cr>"
 	else
-			echo "Not a Boolean Type."
+			echo "Not a Boolean or Comprator Type."
 	endif
 endfunction
 
