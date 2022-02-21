@@ -7,12 +7,16 @@ endif
 """ Function to toogle boolen.
 function! ToogleTrue()
 	let g:cw = expand("<cword>")
-	let cmdTrue = "\<c-r>='false'\<cr>"
-	let cmdFalse = "\<c-r>='true'\<cr>"
+	" let cmdTrue = "\<c-r>='false'\<cr>"
+	" let cmdFalse = "\<c-r>='true'\<cr>"
 	if g:cw ==? "true"
-			execute 'normal! diwi'.cmdTrue
+			execute 'normal! diwi'."\<c-r>='false'\<cr>"
 	elseif g:cw ==? "false"
-			execute 'normal! diwi'.cmdFalse
+			execute 'normal! diwi'."\<c-r>='true'\<cr>"
+	elseif g:cw ==? "=="
+			execute 'normal! diwi'."\<c-r>='!='\<cr>"
+	elseif g:cw ==? "!="
+			execute 'normal! diwi'."\<c-r>='=='\<cr>"
 	else
 			echo "Not a Boolean Type."
 	endif
